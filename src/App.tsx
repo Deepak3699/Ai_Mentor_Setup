@@ -195,33 +195,43 @@ const App: React.FC = () => {
             >
               {/* Header Banner */}
               <div className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-slate-900 text-white p-8 md:p-12 rounded-[36px] shadow-2xl mb-10 relative overflow-hidden">
-                <div className="relative z-10 max-w-3xl">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/10 backdrop-blur-md text-indigo-200 rounded-full text-xs font-bold mb-6 border border-white/10">
-                    <Sparkles className="w-3.5 h-3.5 text-indigo-300" />
-                    OFFICIAL INTERN SETUP GUIDE 2026
+                <div className="flex flex-col lg:flex-row gap-10 items-center justify-between relative z-10">
+                  <div className="flex-1 max-w-2xl">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/10 backdrop-blur-md text-indigo-200 rounded-full text-xs font-bold mb-6 border border-white/10">
+                      <Sparkles className="w-3.5 h-3.5 text-indigo-300" />
+                      OFFICIAL INTERN SETUP GUIDE 2026
+                    </div>
+                    <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
+                      Welcome to the <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-pink-300">AI Mentor</span> Project!
+                    </h1>
+                    <p className="text-base md:text-lg text-indigo-100/90 mb-8 leading-relaxed">
+                      This step-by-step master guide is specifically prepared so every new intern can effortlessly set up their local development environment, configure the <strong>Neon PostgreSQL (Singapore)</strong> database, install frontend/backend/AI services, and master Git branching & Pull Requests.
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-4">
+                      <button 
+                        onClick={() => setActiveTab('github-setup')}
+                        className="bg-white text-indigo-950 px-6 py-3.5 rounded-2xl font-bold flex items-center gap-2 hover:bg-indigo-50 transition-all shadow-lg text-sm"
+                      >
+                        Start Step 1: Git Setup <ArrowRight className="w-4 h-4" />
+                      </button>
+                      <a
+                        href={REPO_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3.5 rounded-2xl font-bold flex items-center gap-2 hover:bg-white/20 transition-all text-sm"
+                      >
+                        <GitHubIcon className="w-4 h-4" /> Open GitHub Repo
+                      </a>
+                    </div>
                   </div>
-                  <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
-                    Welcome to the <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-pink-300">AI Mentor</span> Project!
-                  </h1>
-                  <p className="text-base md:text-lg text-indigo-100/90 mb-8 leading-relaxed">
-                    This step-by-step master guide is specifically prepared so every new intern can effortlessly set up their local development environment, configure the <strong>Neon PostgreSQL (Singapore)</strong> database, install frontend/backend/AI services, and master Git branching & Pull Requests.
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-4">
-                    <button 
-                      onClick={() => setActiveTab('github-setup')}
-                      className="bg-white text-indigo-950 px-6 py-3.5 rounded-2xl font-bold flex items-center gap-2 hover:bg-indigo-50 transition-all shadow-lg text-sm"
-                    >
-                      Start Step 1: Git Setup <ArrowRight className="w-4 h-4" />
-                    </button>
-                    <a
-                      href={REPO_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3.5 rounded-2xl font-bold flex items-center gap-2 hover:bg-white/20 transition-all text-sm"
-                    >
-                      <GitHubIcon className="w-4 h-4" /> Open GitHub Repo
-                    </a>
+
+                  <div className="w-full lg:w-[360px] shrink-0">
+                    <img 
+                      src="/hero-intern.jpg" 
+                      alt="AI Mentor Guide" 
+                      className="rounded-[32px] shadow-2xl border-4 border-white/20 w-full object-cover max-h-[380px] hover:scale-[1.02] transition-transform duration-300" 
+                    />
                   </div>
                 </div>
               </div>
