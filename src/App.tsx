@@ -191,47 +191,110 @@ const App: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
               key="welcome"
-              className="max-w-5xl"
+              className="max-w-6xl"
             >
-              {/* Header Banner */}
-              <div className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-slate-900 text-white p-8 md:p-12 rounded-[36px] shadow-2xl mb-10 relative overflow-hidden">
-                <div className="flex flex-col lg:flex-row gap-10 items-center justify-between relative z-10">
-                  <div className="flex-1 max-w-2xl">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/10 backdrop-blur-md text-indigo-200 rounded-full text-xs font-bold mb-6 border border-white/10">
-                      <Sparkles className="w-3.5 h-3.5 text-indigo-300" />
-                      OFFICIAL INTERN SETUP GUIDE 2026
+              {/* 1. Hero Presentation Section (Clean & Open with Side Image) */}
+              <div className="flex flex-col lg:flex-row gap-12 items-center justify-between mb-16">
+                <div className="flex-1 max-w-2xl">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-xs font-extrabold mb-6 shadow-sm">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-600"></span>
+                    </span>
+                    INTERN MASTER SETUP GUIDE 2026
+                  </div>
+                  <h1 className="text-5xl lg:text-6xl font-black mb-6 text-slate-900 leading-[1.15] tracking-tight">
+                    Master your Internship with <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">AI Mentor</span>
+                  </h1>
+                  <p className="text-lg lg:text-xl text-slate-500 mb-8 leading-relaxed">
+                    Starting an internship should be exciting, not overwhelming. We’ve built this complete step-by-step master guide to help you configure your local environment, set up the Singapore Neon database, run all 5 services, and submit your first Pull Request with zero friction.
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <button 
+                      onClick={() => setActiveTab('github-setup')}
+                      className="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 text-sm hover:scale-[1.02]"
+                    >
+                      Start Step-by-Step Setup <ArrowRight className="w-5 h-5" />
+                    </button>
+                    <a
+                      href={REPO_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white text-slate-800 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-slate-50 transition-all text-sm shadow-sm"
+                    >
+                      <GitHubIcon className="w-5 h-5" /> Open GitHub Repo
+                    </a>
+                  </div>
+                </div>
+
+                <div className="w-full lg:w-[440px] shrink-0">
+                  <img 
+                    src="/hero-intern.jpg" 
+                    alt="AI Mentor Guide" 
+                    className="rounded-[44px] shadow-2xl border-8 border-white w-full object-cover h-[380px] lg:h-[420px] shadow-indigo-100/80 hover:scale-[1.01] transition-transform duration-300" 
+                  />
+                </div>
+              </div>
+
+              {/* 2. Separate Blue/Indigo Section with Increased Length & Prominence */}
+              <div className="w-full bg-gradient-to-r from-indigo-950 via-indigo-900 to-slate-900 text-white p-10 lg:p-14 rounded-[40px] shadow-2xl mb-14 relative overflow-hidden border border-indigo-800/40">
+                <div className="relative z-10">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-indigo-800/60 pb-8">
+                    <div>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md text-indigo-200 rounded-full text-xs font-bold mb-3 border border-white/10">
+                        <Sparkles className="w-3.5 h-3.5 text-indigo-300" />
+                        CORE ENGINEERING SPECIFICATION
+                      </div>
+                      <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight">
+                        Complete Onboarding Roadmap & Service Topology
+                      </h2>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
-                      Welcome to the <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-pink-300">AI Mentor</span> Project!
-                    </h1>
-                    <p className="text-base md:text-lg text-indigo-100/90 mb-8 leading-relaxed">
-                      This step-by-step master guide is specifically prepared so every new intern can effortlessly set up their local development environment, configure the <strong>Neon PostgreSQL (Singapore)</strong> database, install frontend/backend/AI services, and master Git branching & Pull Requests.
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-4">
-                      <button 
-                        onClick={() => setActiveTab('github-setup')}
-                        className="bg-white text-indigo-950 px-6 py-3.5 rounded-2xl font-bold flex items-center gap-2 hover:bg-indigo-50 transition-all shadow-lg text-sm"
-                      >
-                        Start Step 1: Git Setup <ArrowRight className="w-4 h-4" />
-                      </button>
-                      <a
-                        href={REPO_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3.5 rounded-2xl font-bold flex items-center gap-2 hover:bg-white/20 transition-all text-sm"
-                      >
-                        <GitHubIcon className="w-4 h-4" /> Open GitHub Repo
-                      </a>
-                    </div>
+                    <button 
+                      onClick={() => setActiveTab('neon-db')}
+                      className="self-start md:self-auto px-6 py-3 bg-indigo-500 hover:bg-indigo-400 text-white font-bold rounded-2xl text-xs transition-all shadow-lg shadow-indigo-950/50 flex items-center gap-2 shrink-0"
+                    >
+                      <Database className="w-4 h-4" /> Setup Neon DB (Singapore)
+                    </button>
                   </div>
 
-                  <div className="w-full lg:w-[360px] shrink-0">
-                    <img 
-                      src="/hero-intern.jpg" 
-                      alt="AI Mentor Guide" 
-                      className="rounded-[32px] shadow-2xl border-4 border-white/20 w-full object-cover max-h-[380px] hover:scale-[1.02] transition-transform duration-300" 
-                    />
+                  {/* 3 Large Highlight Feature Pillars */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-2xl">🇸🇬</span>
+                        <h3 className="font-bold text-lg text-white">Neon DB Singapore</h3>
+                      </div>
+                      <p className="text-indigo-200/80 text-xs leading-relaxed mb-3">
+                        Mandatory region selection: <code className="bg-black/40 px-1.5 py-0.5 rounded text-emerald-300">ap-southeast-1</code> for low latency and pooling compatibility.
+                      </p>
+                      <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">Step 3 in Guide →</span>
+                    </div>
+
+                    <div className="p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="p-2 bg-indigo-500/20 rounded-xl text-indigo-300">
+                          <Layers className="w-5 h-5" />
+                        </div>
+                        <h3 className="font-bold text-lg text-white">5 Microservices</h3>
+                      </div>
+                      <p className="text-indigo-200/80 text-xs leading-relaxed mb-3">
+                        Backend (5000), Admin Backend (5001), AI FastAPI (8000), Frontend (5173), Admin UI (5174).
+                      </p>
+                      <span className="text-[11px] font-bold text-indigo-300 uppercase tracking-wider">Step 4 & 5 in Guide →</span>
+                    </div>
+
+                    <div className="p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="p-2 bg-purple-500/20 rounded-xl text-purple-300">
+                          <GitPullRequest className="w-5 h-5" />
+                        </div>
+                        <h3 className="font-bold text-lg text-white">Pull Request Rule</h3>
+                      </div>
+                      <p className="text-indigo-200/80 text-xs leading-relaxed mb-3">
+                        Never commit to main. Create feature branches and raise PR against <code className="bg-black/40 px-1.5 py-0.5 rounded text-indigo-300">Deepak3699/Ai_Mentor:main</code>.
+                      </p>
+                      <span className="text-[11px] font-bold text-purple-300 uppercase tracking-wider">Step 6 in Guide →</span>
+                    </div>
                   </div>
                 </div>
               </div>
