@@ -1139,7 +1139,7 @@ git status
 git add backend/.env.example backend/src/db.ts
 
 # Commit with a clean, explanatory message
-git commit -m "feat(backend): configure neon database connection for singapore region"`
+git commit -m "feat(backend): configure neon database connection for singapore region"`}
                 />
               </div>
 
